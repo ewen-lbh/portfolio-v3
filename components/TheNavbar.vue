@@ -3,6 +3,8 @@
         Logo
         ul.links
             //Order is reversed because of writing-mode: sideways-lr
+            li.link(:class="currentClass('blog')"):     nuxt-link(to="/blog") Blog
+            li.link(:class="currentClass('about')"):    nuxt-link(to="/about") About
             li.link(:class="currentClass('graphism')"): nuxt-link(to="/graphism") Graphism
             li.link(:class="currentClass('music')"):    nuxt-link(to="/music") Music
             li.link(:class="currentClass('software')"): nuxt-link(to="/software") Software
@@ -43,7 +45,7 @@ nav {
 }
 
 .link {
-  margin-top: 70px;
+  margin-top: 50px;
 
   &:not(:hover):not(.current) {
     opacity: 0.5;
@@ -54,7 +56,7 @@ nav {
   color: white;
   font-family: 'Narita Monospace';
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   text-transform lowercase
 }
 </style>
