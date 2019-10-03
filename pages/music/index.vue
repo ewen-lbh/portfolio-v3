@@ -1,6 +1,6 @@
 <template lang="pug">
   #inner-content
-    h1 Music  
+    h1 music
     ul.items-grid
       li(v-for="albumSlug in albumSlugs")
         nuxt-link(:to="`/music/${albumSlug}/`")
