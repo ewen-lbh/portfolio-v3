@@ -40,17 +40,17 @@ export default {
   width: calc(100vw - 100px - 300px);
   margin-left: 100px + 300px;
   padding: 20px;
-  background: #1a1a1a
+  background: #1a1a1a;
   height: 100vh;
-  overflow-y scroll
-  overflow-x hidden
+  overflow-y: auto;
+  overflow-x: hidden;
   color: white;
 
   h1 {
-    text-align center
-    font-family 'Narita Monospace'
-    font-weight normal
-    font-size: 5vw
+    text-align: center;
+    font-family: 'Narita Monospace';
+    font-weight: normal;
+    font-size: 4vw;
   }
 }
 
@@ -62,7 +62,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background black
+  background: black;
 }
 
 a:focus, a:active, button::-moz-focus-inner, input[type='reset']::-moz-focus-inner, input[type='button']::-moz-focus-inner, input[type='submit']::-moz-focus-inner, select::-moz-focus-inner, input[type='file'] > input[type='button']::-moz-focus-inner {

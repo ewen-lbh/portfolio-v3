@@ -2,14 +2,14 @@
   #content-inner
     img.big-logo(src="~/assets/images/logos/Mx3-Logo-Light-Glitched.gif")
     p
-      | I appreciate clean & minimalist designs. Focused beauty. Simple yet visually stunning.
+      | Clean and minimalist designs. Focused beauty. Simple yet visually stunning.
       br
-      | I love creating on digital mediums: music, motion design, UI/UX design, websites, logos,…
+      | Creation for digital mediums: music, motion design, UI/UX design, websites, logos,...
       br
-      | Always try to make things yourself instead of relying on someone else’s work.
+      | Always try to make creative work yourself instead of relying on someone else’s.
       br
       | Learn whatever language, tool or software is required to achieve an idea.
-    ButtonOutline.learn-more Learn more
+    ButtonOutline(to="/about/").learn-more Learn more
 
 </template>
 
@@ -36,6 +36,9 @@ export default {
 
   .big-logo {
     height: 150px;
+    &:not(:hover) {
+      filter saturate(0)
+    }
   }
 
   button.learn-more {
