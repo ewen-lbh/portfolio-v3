@@ -8,7 +8,7 @@
     template(v-for="(pathFragment, i) in pathFragments")  
       li.breadcrumb-link
         nuxt-link(v-if="i !== pathFragments.length - 1" :to="getPathFromPathFragment(pathFragment)") {{pathFragment}}
-        span(v-else) {{pathFragment}}
+        span(v-else) {{pathFragment.replace(/-/g, ' ')}}
       li.breadcrumb-arrow(v-if="i !== pathFragments.length - 1")
         i.material-icons chevron_right
 </template>

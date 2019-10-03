@@ -42,7 +42,16 @@ export default {
   padding: 20px;
   background: #1a1a1a
   height: 100vh;
+  overflow-y scroll
+  overflow-x hidden
   color: white;
+
+  h1 {
+    text-align center
+    font-family 'Narita Monospace'
+    font-weight normal
+    font-size: 5vw
+  }
 }
 
 html {
