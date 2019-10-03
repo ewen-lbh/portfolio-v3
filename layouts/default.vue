@@ -27,22 +27,22 @@ export default {
 
 <style lang="stylus">
 #navbar {
-  left: 0
-  z-index: 100
+  left: 0;
+  z-index: 100;
 }
 
 #sidebar {
-  left: 100px
-  z-index: 100
+  left: 100px;
+  z-index: 100;
 }
 
 #content {
-  width calc(100vw - 100px - 300px)
-  margin-left 100px + 300px
-  padding 20px
-  background rgba(0,0,0,0.9)
-  height 100vh
-  color white
+  width: calc(100vw - 100px - 300px);
+  margin-left: 100px + 300px;
+  padding: 20px;
+  background: #1a1a1a
+  height: 100vh;
+  color: white;
 }
 
 html {
@@ -53,11 +53,15 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background black
 }
 
-*,
-*:before,
-*:after {
+a:focus, a:active, button::-moz-focus-inner, input[type='reset']::-moz-focus-inner, input[type='button']::-moz-focus-inner, input[type='submit']::-moz-focus-inner, select::-moz-focus-inner, input[type='file'] > input[type='button']::-moz-focus-inner {
+  border: 0;
+  outline: 0;
+}
+
+*, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
 }

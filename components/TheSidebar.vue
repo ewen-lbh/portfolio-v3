@@ -8,6 +8,6 @@
     height 100vh
     width: 300px
     position fixed
-    background rgba(0,0,0,0.95)
-    animation all 0.5s ease
+    background #0d0d0d
+    transition all 0.25s ease
 </style>

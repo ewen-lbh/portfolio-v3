@@ -1,15 +1,15 @@
 <template lang="pug">
-  //-FIXME: duplicated code @ li.breadcrumb-arrow
   ul.breadcrumbs(v-if="pathFragments.length >= 1")
     li.breadcrumb-link
       nuxt-link(to="/"): i.material-icons home
-    li.breadcrumb-arrow(v-if="!isLastPathFragment(pathFragment)")
+    li.breadcrumb-arrow
       i.material-icons chevron_right
 
-    template(v-for="pathFragment in pathFragments")  
+    template(v-for="(pathFragment, i) in pathFragments")  
       li.breadcrumb-link
-        nuxt-link(:to="getPathFromPathFragment(pathFragment)") {{pathFragment}}
-      li.breadcrumb-arrow(v-if="!isLastPathFragment(pathFragment)")
+        nuxt-link(v-if="i !== pathFragments.length - 1" :to="getPathFromPathFragment(pathFragment)") {{pathFragment}}
+        span(v-else) {{pathFragment}}
+      li.breadcrumb-arrow(v-if="i !== pathFragments.length - 1")
         i.material-icons chevron_right
 </template>
 
@@ -31,10 +31,13 @@ export default {
       const pathFragmentIdx = this.pathFragments.indexOf(pathFragment)
       if (pathFragmentIdx === -1) return '/'
 
-      return this.pathFragments
-        .slice(1, pathFragmentIdx + 1)
-        .map((f) => f.toLowerCase())
-        .join('/')
+      return (
+        '/' +
+        this.pathFragments
+          .slice(0, pathFragmentIdx + 1)
+          .map((f) => f.toLowerCase())
+          .join('/')
+      )
     }
   }
 }
@@ -59,11 +62,11 @@ export default {
 }
 
 .breadcrumb-arrow {
-  opacity: 0.25
+  opacity: 0.25;
 }
 
-.breadcrumb-link a {
-  opacity: 0.5
+.breadcrumb-link > * {
+  opacity: 0.5;
   text-decoration: none;
   color: inherit;
   font-family: 'Product Sans';
@@ -73,6 +76,6 @@ export default {
 }
 
 .breadcrumb-link:hover a {
-  opacity: 1
+  opacity: 1;
 }
 </style>
